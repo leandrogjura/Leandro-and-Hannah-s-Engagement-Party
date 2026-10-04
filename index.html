@@ -66,11 +66,11 @@ html.lock,html.lock body{overflow:hidden;height:100%}
 .env{position:relative;width:min(86vw,440px);aspect-ratio:3/2;border:0;padding:0;background:none;cursor:pointer;perspective:1200px;font:inherit;color:inherit;margin-top:6vh}
 .env:focus-visible{outline:3px solid var(--wine);outline-offset:10px}
 .env .back{position:absolute;inset:0;background:#4a0919;border-radius:4px;box-shadow:0 24px 50px rgba(0,0,0,.22)}
-.env .card{position:absolute;left:6%;right:6%;top:6%;height:90%;background:#fff;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.3rem;transition:transform .9s cubic-bezier(.3,.7,.2,1) .6s;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.env .card{position:absolute;left:6%;right:6%;top:6%;height:90%;background:#fff;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.3rem;transition:transform 1.6s cubic-bezier(.3,.7,.2,1) 1.3s;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 .env .card b{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.2rem,4.5vw,1.8rem);font-weight:900}
 .env .card i{font-family:'Playfair Display',Georgia,serif;color:var(--wine);font-size:clamp(.95rem,3vw,1.2rem)}
 .env .front{position:absolute;inset:0;z-index:3;background:#6d0f24;clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);border-radius:4px}
-.env .flap{position:absolute;top:0;left:0;right:0;height:56%;background:#80142c;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;z-index:4;transition:transform .7s ease-in-out,z-index 0s .35s}
+.env .flap{position:absolute;top:0;left:0;right:0;height:56%;background:#80142c;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;z-index:4;transition:transform 1.5s ease-in-out,z-index 0s .8s}
 .env .seal{position:absolute;left:50%;top:56%;width:20%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:#3a0612;color:#f1d9a8;display:grid;place-items:center;z-index:5;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-style:italic;font-size:clamp(.8rem,3.4vw,1.3rem);box-shadow:0 2px 8px rgba(0,0,0,.35);transition:opacity .3s}
 @media(prefers-reduced-motion:no-preference){.env:not(.open) .seal{animation:pulse 2.2s ease-in-out infinite}}
 @keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.08)}}
@@ -88,7 +88,7 @@ h1 .amp{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;font-weight:50
 h1 .ep{font-family:'Pinyon Script','Snell Roundhand',cursive;font-style:normal;font-weight:400;font-size:.52em;line-height:1.1;padding-top:.3em;color:var(--wine);letter-spacing:0}
 </style></head><body>
 <script>document.documentElement.classList.add("lock")</script>
-<div class="env-wrap" id="ew"><button class="env" id="env" type="button" aria-label="Open the invitation"><span class="back"></span><span class="card"><b>Leandro &amp; Hannah</b><i>Engagement party</i></span><span class="front"></span><span class="flap"></span><span class="seal">L&amp;H</span></button>
+<div class="env-wrap" id="ew"><button class="env" id="env" type="button" aria-label="Open the invitation"><span class="back"></span><span class="card"><b>Leandro &amp; Hannah's</b><i>Engagement party</i></span><span class="front"></span><span class="flap"></span><span class="seal">L&amp;H</span></button>
 <div class="env-text"><p class="big2">You're invited</p><small>Tap the envelope to open</small></div></div>
 <header class="hero">
 <div class="txt"><div>
@@ -127,8 +127,8 @@ d.textContent=Math.floor(t/864e5);h.textContent=Math.floor(t/36e5)%24;m.textCont
 tick();setInterval(tick,1000);
 var env=document.getElementById('env'),ew=document.getElementById('ew'),red=matchMedia('(prefers-reduced-motion: reduce)').matches;
 env.addEventListener('click',function(){if(env.classList.contains('open'))return;env.classList.add('open');
-setTimeout(function(){document.documentElement.classList.remove('lock');document.body.classList.add('go');scrollTo(0,0);ew.classList.add('gone')},red?150:1900);
-setTimeout(function(){ew.style.display="none"},red?600:3000)});
+setTimeout(function(){document.documentElement.classList.remove('lock');document.body.classList.add('go');scrollTo(0,0);ew.classList.add('gone')},red?150:4000);
+setTimeout(function(){ew.style.display="none"},red?600:5400)});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var n=b.dataset.n;
